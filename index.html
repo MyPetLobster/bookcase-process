@@ -665,7 +665,7 @@
           <div class="part-content">
             <p>
               Yeah. Coming into this project, CSS was actually one of my
-              favorite parts of web development. It still is, but now I have
+              favorite parts of web development. It still is, but now I've
               learned that I need to be more organized with my CSS. When I
               started working on the CSS, I created a file within the /static
               folder called "styles.css". I figured one document would be
@@ -675,10 +675,9 @@
             </p>
             <p>
               By the time I finished the "global" styling and navbar CSS, I was
-              already nearing 400 lines of code. "Not much more" thought the
+              already nearing 400 lines of code. "That's fine...Not much more to do", thought the
               inexperienced developer. I was wrong. I was so wrong. I was so, so
-              wrong. I was so, so, so wrong. I was so, so, so, so wrong. Like
-              1,714 lines of code wrong. whoops.
+              wrong. Like 1,714 lines of code wrong. whoops.
             </p>
             <p>
               I was probably about halfway through the fever dream of CSS when I
@@ -687,15 +686,13 @@
               was thinking about how each page would be so similar? I don't
               know. But by the time I realized my mistake, I was too far down
               this road to turn back. I had to finish what I started. I embraced
-              the chaos. I felt like a mad scientist. I was a mad scientist. I
-              was a mad scientist and my CSS was my monster. I was Victor
-              Frankenstein and my CSS was my monster. I was Victor Frankenstein
-              and my CSS was my monster and I was the monster. I was the
-              monster. I was the monster.
+              the chaos. I felt like a mad scientist. I
+              was a mad scientist and the CSS was my creation. I was Victor Frankenstein
+              and this code was my monster. Or was I the monster?
             </p>
 
             <p>
-              Honestly, once I committed to just letting it fly and not worrying
+              Once I committed to just letting it fly and not worrying
               about the mess, I had a blast with the CSS. Do I regret not
               keeping things more organized from the start? Absolutely. Will I
               take the time to learn about SASS and CSS best practices before my
@@ -706,10 +703,10 @@
             </p>
             <p>
               The final thing I have in my notes for this part of the project is
-              -- "Fuck Bootstrap". To be fair, I didn't really give it much of a
+              -- "F*** Bootstrap". To be fair, I didn't really give it much of a
               chance. But without taking the time to dive into understanding
               Bootstrap, I was feeling very confined by the framework, so opted
-              to do things "freehand".
+              to do things "freehand" instead.
             </p>
           </div>
           <div class="summary-learned">
@@ -804,8 +801,8 @@
               "user rating" field I used a select element with options for 1-5
               stars and a checkbox for "read". It took me a while to finally get
               this working as intended. I had to figure out how to pass the
-              current user rating and read status to the form. I ended up more
-              hidden input fields to actually hold the necessary values then
+              current user rating and read status to the form. I ended up using more
+              hidden input fields to actually hold the necessary values. Then I
               used JavaScript to pass these values to the correct fields.
             </p>
             <h3>Missing Features</h3>
@@ -833,9 +830,10 @@
             </p>
             <p>
               Test Driven Development: This is a concept that was covered in
-              CS50x, but while I understand the concept of TDD, I do not
+              CS50x. But while I understand the concept of TDD, I do not
               understand how to implement it. I think this is something I need
-              to learn more about before my next project along with PyTest.
+              to learn more about before my next project. I'll do some reading 
+              about TDD and related tools like PyTest and Selenium.
             </p>
           </div>
           <div class="summary-learned">
@@ -884,17 +882,27 @@
             <p>
               Configuring Flask-Mail was fairly straight forward. I initially
               created a Mail object and configured mail within my app.py file.
-              But because of my project's file structure, I ended up creating
-              the object within the __init__.py file's create_app() function. I
-              also added another two environment variables to my .env file, one
+              But because of my project's file structure, I had to scrap this and 
+              initialize the object within the __init__.py file's create_app() function. 
+              I also added another two environment variables to my .env file, one
               for the gmail username and one for the password. I used the "os"
               module once again to access these environment variables.
+
+              one for a "SECRET_TOKEN" 
+              that I would use to generate a secret_key. During testing, I was using Python's 
+              'secrets' module to randomly generate a token. I still have the 'secrets' module 
+              in my code as a failsafe for the SECRET_TOKEN. 
             </p>
             <p>
               The next step wasn't quite as simple. I started by installing the
-              Python "secrets" module and the "itsdangerous" library. I used
-              secrets to create a secret key for the token and used itsdangerous
-              to create a token that would be sent to the user's email address.
+              Python "secrets" module and the "itsdangerous" library. I used the 'secrets'
+              module's 'secret.token_hex(32)' method to generate a 32-byte random string 
+              in hexadecimal format. I called this variable 'secret_key'. Then I created a 
+              function called 'generate_reset_token(user_id)'. As a parameter, this function
+              takes the user's id. I knew that I would have to use a function from the itsdangerous
+              library to generate a token, but I wasn't sure which one.
+            </p>
+            <p>
               I spent an inordinate amount of time trying to discern the
               differences between 'TimedJSONWebSignatureSerializer' and
               'URLSafeTimedSerializer', and figuring out how it all actually
@@ -902,9 +910,14 @@
               within the parameters of the URLSafeTimedSerializer object. I must
               have come across some post or maybe copilot (yea you) suggested I
               use "expires_in" within the parameters of the object when I was
-              creating it. But turns out, I had to use "max_age" as an argument
+              creating it. But turns out, that wasn't what I needed to do. 
+            </p>
+            <p>
+              Instead, I figured out that I had to use "max_age" as an argument
               for the loads() method when I was decoding/authenticating the
-              token. I enjoyed troubleshooting this bug as it was one of the
+              token. I guess that the token itself is hardcoded with some value like "creation time",
+              so all I had to do was define a max_age at the time of authentication. I went with 1,800
+              seconds, or 30 minutes. I enjoyed troubleshooting this bug as it was one of the
               first times I felt comfortable following along with a more
               "advanced" topic in Stack Overflow threads.
             </p>
@@ -927,7 +940,7 @@
               <p>
                 Regarding that last one, I'm super happy that I didn't google
                 the meaning of that until after I finished dealing with all
-                those frustrating bugs
+                those frustrating bugs. 'Simple', my ass.
               </p>
             </ul>
           </div>
@@ -961,23 +974,23 @@
         <div class="part-content">
           <p>
             Throughout my time working on the project there were a few moments
-            where I stopped and wondered how certain parts of the project would
-            work when I deployed it. I knew I would have to figure out how to
-            use environment variables outside of running my little bash script
+            where I stopped and wondered how certain aspects would
+            work when I deployed the website. I knew I would have to figure out how to
+            use environment variables by doing something other than running my little bash script
             each time I activated the virtual environment. I'd have to figure
             out how to use a different database and how to connect it to my
-            application. But to start with I had to be able to answer the
-            question -- "How do I deploy a Flask application?"
+            application. So I started this part like I started every other part,
+            with a google search -- "How do I deploy a Flask application?"
           </p>
           <p>
             Right off the bat, I kept seeing the same few options repeated over
             and over. PythonAnywhere, Heroku, Docker and AWS. But first I
             decided to finally figure out what "WSGI" meant. I knew that Flask
             was defined as a "WSGI" framework, but I had no idea what that
-            meant. One quick google search later and I had my answer -- "Web
-            Server Gateway Interface". I learned that WSGI is a specification
+            meant. I learned that a WSGI is a "Web
+            Server Gateway Interface", and that it's a specification
             for a universal interface between web servers and web apps. In other
-            words, it's a way for a web server to communicate with a web
+            words, it's simply a way for a web server to communicate with a web
             application.
           </p>
           <p>
@@ -986,10 +999,11 @@
             get my site up and running fairly quickly. I used the "git clone"
             command to clone my project from GitHub directly into
             PythonAnywhere. The only thing that gave me a little trouble was
-            setting up and using python-dotenv and getting the virtual
+            setting up and using python-dotenv to create a .env file, and getting the virtual
             environment within PythonAnywhere to include the dependencies I
             needed. I had some trouble getting pipreqs to work, but I found a
-            post on Stack Overflow where the author answered their own question.
+            <a href="https://stackoverflow.com/questions/64630130/pipreqs-requirements-txt-is-not-correct">post on Stack Overflow</a> 
+            where the author answered their own question.
             Turns out that because my .venv/ folder is in my main directory,
             pipreqs was looking for all the dependencies within that folder
             which was causing it to generate a weird requirements.txt file. I
@@ -1004,7 +1018,7 @@
             initialization of the Mail object from my app.py file to my
             __init__.py file. I also had to change the way I was importing the
             Mail object in my auth.py file. This was the first time I actually
-            began to feel like I understand how Python imports work.
+            started to feel like I understood how Python imports work.
           </p>
         </div>
         <div class="summary-learned">
@@ -1047,7 +1061,7 @@
         <h2>Miscellaneous Things I Learned in the Last Two Weeks</h2>
         <ul>
           <li>JSON</li>
-          <li>git branch, merge</li>
+          <li>git branch, merge, and general comfort using git</li>
           <li>Test Flask app locally w/ app.run(debug=True)</li>
           <li>
             Test locally on other devices w/ app.run(host="0.0.0.0", port=5000)
