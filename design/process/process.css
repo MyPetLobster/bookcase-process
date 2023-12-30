@@ -61,8 +61,14 @@ ul {
     margin-top: 30px;
     margin-bottom: 30px;
 }
-    
-
+.bold {
+    font-weight: bold;
+} 
+.sidenote {
+    font-size: 12px;
+    font-style: italic;
+    color: #233337;
+}
 .part,
 .overview,
 .table-of-contents,
@@ -155,6 +161,13 @@ pre {
 .erd-image-box {
     padding: 10px;
 }
+
+
+.anatomy-list {
+    width: 70%;
+}
+
+
 /* Media Queries for Small Screens */
 @media only screen and (max-width: 600px) {
     .flex-container {
