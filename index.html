@@ -209,41 +209,65 @@
           <h2 id="part-two">Part Two: Enter the Matrix</h2>
           <h3>(aka WTF is a virtual environment)</h3>
           <div class="part-content">
+            <p class="sidenote">Sidenote: Around this time I forced myself
+              to start using Stack Overflow more. What was once a scary place
+              was starting to become a useful resource the more I learned how 
+              to find the answers I needed. Before now, if I couldn't find somebody
+              who had asked the exact same question I had, I'd give up and move on.
+              But now I was learning to take bits and pieces from different answers
+              and put them together to solve my problem. Or find a way that another
+              person's question might actually apply to my problem in unexpected ways.</p>
             <p>
               As soon as I started reading about creating web applications with
               Flask, I kept seeing the term "virtual environment" pop up. I had
-              no idea what this was, but I knew I needed to figure it out. I did
-              some reading and asked ChatGPT some questions.
+              no idea what this was, but I knew I probably had to figure it out. I started
+              it all by googling "what is a virtual environment".  
             </p>
 
             <p>
               I learned that a virtual environment is a way to isolate your
-              project from the rest of your computer. This is useful because it
-              allows you to install packages and libraries specific to your
-              project without affecting the rest of your computer. Once I
-              understood and figured out how to create a venv and activate it, I
-              found it incredible useful. I appreciate being able to view all
+              project from the rest of your computer. When I read that my initial 
+              reaction was "Why do I need to quarantine my app...is there something
+              risky about all this?". Turns out, I had nothing to worry about. 
+              This wasn't going to be a dangerous endevour, and not only that,
+              turns out these "virtual environments" would actually be quite useful.
+            </p>
+            <p>
+              Virtual environments allow you to install packages and libraries specific to your
+              project without affecting the rest of your computer. For example, 
+              if you install a specific version of a package for one project, it won't
+              affect another project that might require a different version of that package.
+              Once I understood the basic concepts and figured out how to create a venv and activate it, I
+              found it incredibly useful. I don't have any other projects on my computer 
+              that would have conflicting packages installed, so that benefit didn't factor in.
+              But I really came to appreciate being able to view all
               the packages I've installed for a project and know they're not
-              some unrelated package installed on my computer that I don't
-              understand the purpose of (there's still a lot of those). So for
-              me with this first project at least, the real value of using a
-              venv was the ability to use "pip list" and "pip freeze >
-              requirements.txt". This formed the beginning of my understanding
+              some unrelated packages installed on my computer that I don't
+              understand the purpose of (there's still a lot of those). 
+            </p>
+            <p>
+              So for me with this first project at least, the real value of using a
+              venv was the ability to use things like "pip list" and "pip freeze >
+              requirements.txt". This allowed me to see a manageable list of the packages 
+              I installed within the virtual environment I created, and it's what 
+              formed the beginning of my understanding
               of dependencies and requirements. Much later in the project, I
-              learned that virtual environments are also useful for deploying
-              your application.
+              learned that virtual environments are also useful for making sure 
+              deployment goes smoothly. 
             </p>
 
             <p></p>
 
             <p>
-              I was able to get the venv up and running on the first day of
+              I was able to get the virtual environment up and running on the first day 
               working on the project. I think the highlight of this part was
               when I created my first bash script that actually proved useful.
               All it did was save me a few seconds of typing "source
-              venv/bin/activate" but it was a proud moment for me. This script
-              would evolve a bit over the course of the project to include
-              exporting environment variables (which was another foreign concept
+              venv/bin/activate" but I felt proud of myself. Reading people on forums 
+              talk about writing scripts for this or that always felt so foreign to me.
+              So to actually write a little bit of code that made things just a tiny bit 
+              more convenient was a huge W. This script would evolve a bit over the course 
+              of the project to include exporting environment variables (which was another unknown
               to me at this point).
             </p>
           </div>
@@ -294,24 +318,24 @@
         </div>
 
         <div class="part">
-          <h2 id="part-three">Part Three: Put the db in bc.db</h2>
+          <h2 id="part-three">Part Three: Put the 'db' in 'bc.db'</h2>
           <h3>Actually, I think it's pronounced "Skewl"</h3>
           <div class="part-content">
             <p>
               The next step was creating a database. I decided to use SQLite for
-              this project. I had used it before in CS50x and it seemed like a
+              this project. I used it before in CS50x and it seemed like a
               good choice for a small project like this. I also decided to use
               SQLAlchemy as an ORM. I didn't know what that was until I started
               preparing for this project. I learned that an ORM is an Object
               Relational Mapper. It's a tool that allows you to interact with a
               database using objects and methods instead of SQL queries. I
               decided to use an ORM because I thought it would be a good
-              learning experience. I also thought it would be useful to know how
+              learning experience and it would be useful to know how
               to use an ORM for future projects.
             </p>
 
             <p>
-              I loved the SQL week of CS50x and I was excited to get to use SQL
+              I LOVED learning about SQL in CS50x and I was excited to get to use SQL
               again. I knew my database would need a table for users, a table
               for books, and a table for bookcases. I connected the bookcase
               table to the user table through the "owner_id". This means that
@@ -321,13 +345,13 @@
               table. This means that a bookcase can have many books and a book
               can be in many bookcases. I used a join table called
               "bookcase_book" to connect the two tables. This table has a
-              bookcase_id and a book_id.
+              bookcase_id and a book_id to connect those two table.
             </p>
 
             <p>
               I used the "flask db migrate" command to create a migration file.
               I then used the "flask db upgrade" command to apply the migration
-              to my database. I was able to use the "flask shell" command to
+              to my database and the "flask shell" command to
               test out my database. I was able to create a user, bookcase, and
               book and add the book to the bookcase. I was also able to query
               the database to get the books in a bookcase and the bookcases a
@@ -392,8 +416,8 @@
           <h2 id="part-four">Part Four: Inside Out</h2>
           <h3>Register, Login, and Logout</h3>
           <div class="part-content">
-            <p>
-              Before I started this part of the project, I used Jinja to create
+            <p class="sidenote">
+              Sidenote: Before I started this part of the project, I used Jinja to create
               a base.html file and a home.html file. I used the "extends" and
               "block" keywords to create a base template that I could extend to
               other pages. I also created a "static" folder for CSS and
@@ -403,14 +427,14 @@
               Thanks to <a href="https://www.techwithtim.net/tutorials/flask">TechWithTim's Flask tutorials</a>, I was
               able to get user authentication up and running pretty quickly. I
               created a "auth.py" file and imported the db object from my
-              "models.py" file. I created a User class and a Bookcase class. I
+              "models.py" file. I created a User class and a Bookcase class, and
               used the UserMixin class from Flask-Login to add some useful
-              methods to my User class. I created a login_manager object and
+              methods to my User class. Then I created a login_manager object and
               initialized it in create_app() function inside my __init__.py
-              file. I created a login.html file and a register.html file, along
+              file. I created a login.html template and a register.html template, along
               with a login route and a register route. I used the "flask-login"
               extension to create a login_required decorator for my routes and
-              finally created a logout route.
+              finally repeated the process for the logout route.
             </p>
 
             <p>
@@ -419,15 +443,17 @@
               of any. I think the only part I remember struggling to understand
               was the "current_user" variable. But turns out it's just a
               variable that stores the current user...duh. I guess I just
-              expected more steps to make that work.
+              expected more steps would be involved to make that work. But it was
+              just a matter of importing the "current_user" variable from
+              "flask_login" and then using it in my templates.
             </p>
 
             <p>
               Oh! I almost forgot, password hashing! I used the
-              "werkzeug.security" module to hash passwords. I used the
+              "werkzeug.security" module to hash passwords, then the
               "generate_password_hash" function to hash the password when a user
-              registers. I then used the "check_password_hash" function to check
-              the password when a user logs in. Easy peasy.
+              registers. Finally, I used the "check_password_hash" function to check
+              the password when a user logs in. Easy peasy!
             </p>
           </div>
           <div class="summary-learned">
@@ -471,7 +497,7 @@
         </div>
 
         <div class="part">
-          <h2 id="part-five">Part Five: Oh, the Places You'll Go</h2>
+          <h2 id="part-five">Part Five: You Can't Get There From Here</h2>
           <h3>Routes, views, adding books manually</h3>
           <div class="part-content">
             <p>
@@ -481,13 +507,13 @@
               needed, for most of the pages that I wanted to create.
             </p>
             <p>
-              Once I finished creating all the routes, views and templates for
+              Once I finished creating all the routes, views, and templates for
               the pages I wanted, I created a form to create bookcases and a
               form to manually add books to a bookcase. I ran into a few hurdles
               during this part of the project. That pesky "current_user"
               variable was one of them. I had to figure out how to pass the
               current user's id to the bookcase form so that I could connect the
-              bookcase to the user and how to pass the current bookcase's id to
+              bookcase to the user, and how to pass the current bookcase's id to
               the book form so that I could connect the book to the bookcase. I
               went in circles for a bit with ChatGPT but finally realized I
               could use hidden inputs to pass the ids.
@@ -538,7 +564,7 @@
         </div>
 
         <div class="part">
-          <h2 id="part-six">Part Six: The Keys to the Kingdom</h2>
+          <h2 id="part-six">Part Six: The Key Ingredient</h2>
           <h3>How to use API's</h3>
           <div class="part-content">
             <p>
@@ -547,7 +573,7 @@
               how to get an API key. I did some reading and watched some videos
               and I was able to get a basic understanding of how API's work. I
               learned that an API is a set of functions and procedures that
-              allow the creation of applications that access data and features
+              allow other people or applications to access data and features
               of another service. I learned that an API key is a unique
               identifier that's used to authenticate a user, developer, or
               program to an API. I learned that API keys are used to track and
@@ -556,33 +582,40 @@
             </p>
             <p>
               This is also the part where I had to learn about environment
-              variables. I learned that environment variables are variables that
+              variables. I learned that they are variables that
               are set in the operating system or in the terminal. They store
               information that is used by applications. When I was developing
-              locally, I just used a bash script to activate my venv and export
-              my environment variables. However, later before I deployed the
+              locally, I just used a bash script to activate my virtual environment and export
+              my environment variables. However, before I deployed the
               website, I ended up using the "python-dotenv" module to create a
-              .env file and store my environment variables.
+              .env file and store my environment variables. This also made it much easier
+              to edit my code in VS Code locally and pull changes to PythonAnywhere. I just 
+              added ".env" to my .gitignore file and I was able to have a set of testing 
+              environment variables for my local development and a set of production
+              environment variables for my deployed website.
             </p>
             <p>
               To start with, I created a search form with three fields -- title,
               author, and isbn. I created a route for the search form and a view
-              to handle the form data. I used the requests module to make a GET
+              to handle the form data. Then I used the requests module to make a GET
               request to the Google Books API. The hardest part was figuring out
               how to format the search query itself. I ended up using
               "f-strings" to format the query and .join() to join each word in
-              the query with a "+". Once I got the search results back, I was
-              able to display them on the search page along with a thumbnail
+              the query with a "+". Once I got the search results back, I converted
+              the response from JSON to a Python dictionary. I then looped
+              through the dictionary to get the title, author, etc for each book.
+              I was able to display them on the search page along with a thumbnail
               image of each book's cover. I also added a button to each book
-              that would allow the user to add the book to their bookcase.
+              that would allow the user to add the book to their bookcase. Seeing the
+              results actually populate my page was a great moment for me.
             </p>
 
             <p>
               But then I ran into a problem. How do I actually add the book to
-              the database? Seeing as I already had a working form to manually
+              the database? Not to worry! Seeing as I already had a working form to manually
               add books, I realized all I had to do was create an invisible form
               for each book in the search results and use those hidden inputs to
-              pass the data to the /add_book route.
+              pass the data to the /add_book route. Invisible forms to the rescue!
             </p>
           </div>
           <div class="summary-learned">
@@ -595,6 +628,7 @@
               <li>How to format a search query</li>
               <li>Refresher on how to use f-strings and .join()</li>
               <li>How to use Jinja to display data from a database</li>
+              <li>I love invisible forms</li>
             </ul>
           </div>
           <div class="links">
