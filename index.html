@@ -1081,6 +1081,106 @@
       <div>
         <p class="the-end">Thanks for reading!</p>
       </div>
+      <div class="part" id="not-done-yet">
+        <p>Update: 01/02/24.</p>
+        <p>Happy New Year!</p>
+        <p>&#127881;</p>
+        <p>...I swear I really thought I was done.</p>
+        <p>But alas...</p>
+      </div>
+      <div class="part">
+        <h2 id="part-eleven">Part Eleven: The Feature Creeps Me Out</h2>
+        <h3>&#127926; ...Check it out I'm rocking steady! &#127926;</h3>
+        <div class="part-content">
+          <p>
+            This is the part where I learned firsthand about 'feature creep'. 
+            Once I deployed the website, I started using it on my phone and sharing it with some family
+            over the holidays. And of course, the bugs started crawling out of the woodwork. I was also 
+            finding myself wishing for certain features and quality of life changes. So I started 
+            making a list. I'd still be adding to the list now if I didn't force myself to stop.
+            Now I'm going to write about these last few changes, record my video for CS50 describing
+            the project, then I'm going to hit that submit button!
+          </p>
+        </div>
+        <div class="summary-learned">
+          <ul>
+            <h4>List of Recently Added Features</h4>
+            <li>A footer</li>
+            <li>Designed a logo</li>
+            <li>Update favicon</li>
+            <li>Made the bookcase preview expandable</li>
+            <li>The ability to sort books and bookcases</li>
+            <li>A feature called "Dynamic Bookcases"</li>
+            <li>If you click an authors name, it will search automatically</li>
+            <li>A beta banner with email link</li>
+            <li>Replace @import with @fontface for font import</li>
+            <li>Back to previous page buttons</li>
+            <li>Ability to use email or username for login</li>
+            <li>Ability to edit bookcase names</li>
+            <li>etc.</li>
+          </ul>
+        </div>
+        <div class="part-content">
+          <p>
+            Most of the features I added were fairly straight forward. Same was true for the bug fixes.
+            However, there were a few noteworthy issues I ran into and solved. First and foremost was figuring
+            out how to implement a way of sorting books and bookcases. I got the html and css set up quickly, then
+            wrote out some JavaScript. It worked! But only once. Then I realized that the page was refreshing with each
+            click of the sort button. I solved this by using sessionStorage, a web storage object, to store the current 
+            sort method. I used the 'setItem' method to store the current sort
+            method and sort direction, then I used the 'getItem' method to retrieve that information. 
+          </p>
+          <h3>Dynamic Bookcases</h3>
+          <p>
+            I was excited to implement this feature. I wanted a way for users to be able to generate bookcases easier than
+            clicking and adding them one at a time. I decided to let users add tags to the Notes section of each book's 
+            details. Then, using the Dynamic Bookcase form, they can create a bookcase with a name and tags. The bookcase
+            will then be populated with all the books that have the same tags. All it took was a little bit of Python string
+            manipulation and a few lines of JavaScript. I'm really happy with how this feature turned out.
+          </p>
+          <p>
+            And finally the last thing worth writing about, the logo design. I love drawing and all kinds of visual art.
+            So when I though the website was basically finished, I let myself spend a day trying to come up with a simple
+            logo for the website. I went through a few stages. First I was trying to draw a full bookcase, but I wanted 
+            a logo that would also work as a small icon/flavicon. So I decided to draw a few books stacked on top of each other.
+            I wasn't crazy about the way that looked. It either looked like a pyramid if the books were stacked largest to smallest,
+            or it looked like I was making a Jenga app if I tried stacking the in random order.
+          </p>
+          <p>
+            So I opted for a drawing a few books side by side -- a snippet of a bookcase, if you will. I liked this look better immediately,
+            but still had to go through several revisions to get it right. I started with five books -- odd numbers and all that. But it looked
+            too crowded. Three wasn't enough as I wanted the framing to be a square. So I settled on four books in FIVE spaces. I made the 
+            fourth book lean against the third, give the composition a little balance and making it a bit more interesting while remaining very
+            simple in design. At first the fourth book looked out of place, but after experimenting with some different colors, I landed on a sort
+            of neutral purple. That color helped, but what finally tied it together was the diagonal shadow that I added to that fourth book. Having 
+            that shadow provide a line that mirrored the vertical line of the other books is what made the logo work for me. 
+          </p>
+          <p>
+            The last decision I had to make was whether to include anything on the spines of the books. Throughout the process I just had one small horizontal
+            line near the top of each book's spine and a couple horizontal lines running along the length of the first three books (and continued separately
+            on the fourth book). Something about that just didn't look right. So I started erasing the lines, and halfway through erasing, I realized that I actually
+            fixed it! By erasing part of the line on the fourth book, and half of the line on the third book, I created a sort of optical illusion. 
+            I feel like stopping the line mid-spine somehow counterintuitively implies a continuation of the line onto the fourth book.
+          </p>
+          <p>
+            I also think that the lines help to balance the overall composition. With the fourth book leaning against the third book, the lines help to
+            give weight to the first two books, which is where the pressure of the fourth book would be exerted. And finally, while working as a logo on its own,
+            the horizontal lines on the spines help tie the logo together with the title of the website as it's displayed on the homepage. I'm very pleased with 
+            how the logo came out. Here are some pictures of the process.
+          </p>
+        </div>
+        <div class="cover-process-container">
+          <img src="design/images/bcdb-logo-ver-1.png" alt="BCDB Logo Version 1" class="cover-process">
+          <img src="design/images/bcdb-logo-ver-2.png" alt="BCDB Logo Version 2" class="cover-process">
+          <img src="design/images/bcdb-logo-ver-3.png" alt="BCDB Logo Version 3" class="cover-process">
+          <img src="design/images/bcdb-logo-ver-4.png" alt="BCDB Logo Version 4" class="cover-process">
+          <img src="design/images/bcdb-logo-ver-5.png" alt="BCDB Logo Version 5" class="cover-process">
+          <img src="design/images/bcdb-logo-ver-6.png" alt="BCDB Logo Version 6" class="cover-process">
+        </div>
+      </div>
+      <div class="part">
+        <p>Ok. That's it for real. Thanks again for taking the time to even just skim through this.</p>
+      </div>
       <div class="bottom-links">
         <a href="#top">Back to Top</a>
         <a href="https://github.com/MyPetLobster">My GitHub</a>

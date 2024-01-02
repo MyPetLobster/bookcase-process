@@ -161,12 +161,31 @@ pre {
 .erd-image-box {
     padding: 10px;
 }
-
-
 .anatomy-list {
     width: 70%;
 }
 
+
+.cover-process-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-shrink: 1;
+    gap: 20px;
+}
+.cover-process-container > img {
+    width: 25%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 0 40px 0 rgba(19, 48, 48, 0.089);
+    transition-duration: 150ms;
+
+}
+#not-done-yet {
+    background-color: #216a7a;
+    color:rgb(206, 217, 226)
+}
 
 /* Media Queries for Small Screens */
 @media only screen and (max-width: 600px) {
