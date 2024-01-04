@@ -17,7 +17,7 @@
             <p class="date">Deployed On: 12/27/2023</p>
         </div>
         <div class="visit-site">
-        <a href="https://mypetlobster.pythonanywhere.com">-----> Visit Site <-----</a>
+        <a href="https://www.bookcasedatabase.com">-----> Visit Site <-----</a>
         </div>
 
         <h2>Overview</h2>
@@ -1179,12 +1179,56 @@
         </div>
       </div>
       <div class="part">
-        <p>Ok. That's it for real. Thanks again for taking the time to even just skim through this.</p>
+        <h2 id="part-twelve">Part Twelve: <a href="https://www.bookcasedatabase.com">www.BookcaseDatabase.com</a></h2>
+        <h3>Custom domain name and configuration</h3>
+        <div class="part-content">
+          <p>
+            I made it this far, might as well spend a few bucks and get a custom domain name. Once again, I had no idea what I was doing.
+            But thankfully, PythonAnywhere has a simple step by step tutorial on how to do this. The first thing I had to do was actually
+            buy the domain name. I went with Squarespace, which apparently recently purchased Google Domains. I was able to purchase 
+            the domain "bookcasedatabase.com" for $12 for the first year, and $20 for each year after that. The process was very simple.
+          </p>
+          <p>
+            Until now, I had been using the free version of PythonAnywhere. I decided to upgrade to the "Hacker" plan for $5/month. This
+            allowed me to use my custom domain name. I had to do some reading to figure out what all these new terms meant -- DNS, aliases,
+            CNAME, etc. I learned that DNS stands for "Domain Name System" and that it's a system that translates domain names to IP addresses. 
+            I've definitely learned about all of this before, but this time around I actually felt like I understood what I was reading. 
+          </p>
+          <p class="sidenote">
+            Sidenote: This was another moment that reinforced something for me. I enjoy watching lectures and videos on youtube and spending
+            hours taking notes. But I don't think that is always the best way for me to learn. Anyone who's trying to learn to code knows that the most 
+            common advice is -- "work on your own projects". That advice was discouraging for me when I was getting started. I didn't know how the hell 
+            to even start making a "project". But I'm really beginning to see the value of that advice. At least for me, theoretical learning can only take
+            me so far. I need to actually do things. I need to make mistakes and figure out how to fix them. I need to get stuck and figure out how to dig myself out.
+            I feel like I'm gaining an understanding of the concepts by actually putting them to use, instead of just trying to memorize definitions and ideas. 
+          </p>
+          <p>
+            I also learned that an "alias" is a way to map one domain name to another, and that a canonical name, CNAME, is a type of DNS record that maps one domain name to another.
+            PythonAnywhere provided me with a CNAME record that I had to add to my DNS configuration on Squarespace. This was a fun part of the process as I learned what propagation is and, using <a href="https://www.dnschecker.org">dnschecker.org</a>,
+            I got to watch in realtime as my domain name was propagated across the internet.
+          </p>
+          <p>
+            The next step was to setup an HTTPS/SSL certificate and force HTTPS. This was as easy as switching a couple toggles on PythonAnywhere. They use an auto-renewing certificate from <a href="https://letsencrypt.org">Let's Encrypt</a>.
+          </p>
+          <p> 
+            The last step was to setup a redirect for the naked domain "bookcasedatabase.com". At first I thought this was automatically setup for me because it was working 
+            fine with Google Chrome. However, when I tested in Firefox, I was getting unable to connect to the website. I did some reading and learned that this is because
+            Firefox doesn't automatically add the "www" to the domain name. So I had to add a redirect from "bookcasedatabase.com" to "www.bookcasedatabase.com". I found a 
+            website, <a href="http://wwwizer.com/naked-domain-redirect">wwwizer.com</a>, that provides a free service to do this. I just had to add a CNAME record to my DNS configuration on Squarespace.
+          </p>
+          <p>
+            And that was it! I now have a custom domain name and a secure website. I'm very happy with how this project turned out. I learned a lot and I can't wait to start my next project and continue to 
+            improve Bookcase Database!
+          </p>
+        </div>
+      </div>
+      <div class="part">
+        <p>Ok. That's all folks. Thanks again for taking the time to read this or even just skim through.</p>
       </div>
       <div class="bottom-links">
         <a href="#top">Back to Top</a>
         <a href="https://github.com/MyPetLobster">My GitHub</a>
-        <a href="https://mypetlobster.pythonanywhere.com/">bc.db</a>   
+        <a href="https://www.bookcasedatabase.com">bc.db</a>   
       </div> 
     </div>
   </body>

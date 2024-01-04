@@ -65,6 +65,7 @@ ul {
     font-weight: bold;
 } 
 .sidenote {
+    background-color: rgb(221, 231, 239);
     font-size: 12px;
     font-style: italic;
     color: #233337;
